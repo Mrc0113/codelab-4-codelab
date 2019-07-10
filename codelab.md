@@ -200,3 +200,8 @@ Adding an image
 1. List
 1. Using
 1. Numbers
+
+###
+
+Embed an iframe
+![https://codepen.io/tzoght/embed/yRNZaPi](https://en.wikipedia.org/wiki/File:Example.jpg "Try Me Publisher")
