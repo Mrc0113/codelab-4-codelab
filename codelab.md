@@ -203,5 +203,10 @@ Adding an image
 
 ###
 
-Embed an iframe
+#### Embed an iframe
+Negative
+: Note that the content you embed must be whitelisted in the "IframeWhitelist" var [here](https://github.com/googlecodelabs/tools/blob/master/claat/types/node.go)
+Currently whitelisted include content starting with google.com, google.dev, dartlang.org, web.dev, observablehq.com, repl.it & codepen.io
+
+###
 ![https://codepen.io/tzoght/embed/yRNZaP](https://en.wikipedia.org/wiki/File:Example.jpg "Try Me Publisher")
