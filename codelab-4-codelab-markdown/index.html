@@ -25,7 +25,7 @@
                   id="codelab-4-codelab-markdown"
                   title="CodeLab to Create a CodeLab"
                   environment="web"
-                  feedback-link="github.com/Mrc0113/codelabhowto">
+                  feedback-link="https://github.com/Mrc0113/codelab-4-codelab">
     
       <google-codelab-step label="CodeLab Overview" duration="2">
         <p>Are you trying to create easy to use, visually appealing content for the tech community? This CodeLab will show you how to quickly create your own Google CodeLab just like the one you&#39;re using right now.<br>When creating a Codelab you have two authoring options:</p>
@@ -37,7 +37,7 @@
 <p>Here is an example image of another CodeLab that I created:<br><img alt="image_caption" src="img/e2500cc24e07c73f.png"></p>
 <p><strong>Resources:</strong></p>
 <ul>
-<li>The markdown for this codelab is located here: <a href="https://github.com/Mrc0113/" target="_blank">codelab.md</a></li>
+<li>The markdown for this codelab is located here: <a href="https://github.com/Mrc0113/codelab-4-codelab/blob/master/codelab.md" target="_blank">codelab.md</a></li>
 <li><a href="https://github.com/googlecodelabs/tools" target="_blank">Google CodeLabs Tools Github</a> - The repo that contains the claat tool we&#39;ll be using today</li>
 <li><a href="https://groups.google.com/forum/#!forum/codelab-authors" target="_blank">Google Group for CodeLab Authors</a> - great forum for asking questions about codelabs and discussing future functionality</li>
 <li><a href="https://medium.com/@mariopce/tutorial-how-to-make-tutorials-using-google-code-labs-gangdam-style-d62b35476816" target="_blank">A blog that I used when getting started with Google Codelabs</a></li>
@@ -48,7 +48,7 @@
     
       <google-codelab-step label="Environment Setup" duration="4">
         <p>In order to create a CodeLab you need <em>Go</em> and <em>claat</em> (the codelabs command line tool) installed.</p>
-<p>The instructions below are what worked for me on Mac, but you can also find instructions (here)[https://github.com/googlecodelabs/tools/tree/master/claat]</p>
+<p>The instructions below are what worked for me on Mac, but you can also find instructions <a href="https://github.com/googlecodelabs/tools/tree/master/claat" target="_blank">here</a></p>
 <h3 is-upgraded>Install Go &amp; claat</h3>
 <pre><code>$ brew install go
 $ go get -u -v -x github.com/googlecodelabs/tools/claat
@@ -97,7 +97,7 @@ Duration: 0:05:00
 </code></pre>
 <h3 is-upgraded>Add some example content</h3>
 <p>Now that we have 2 sections to our titled codelab let&#39;s go ahead and add some content to each section.<br>Make up your own or copy &amp; paste the example below:</p>
-<p>Copy into section 1:</p>
+<p>Copy into section 1 (Below Duration and above Section 2):</p>
 <pre><code>### Info Boxes
 Plain Text followed by green &amp; yellow info boxes 
 
@@ -117,7 +117,7 @@ Plain Text followed by bullets
 
 You created bullets!
 </code></pre>
-<p>Copy into section 2:</p>
+<p>Copy into section 2 (Below Duration):</p>
 <pre><code>### Add a Link
 Let&#39;s add a link!
 [Example of a Link](https://www.google.com)
@@ -176,6 +176,10 @@ $ claat serve
 <li>Using</li>
 <li>Numbers</li>
 </ol>
+<h3 is-upgraded>Embed an iframe</h3>
+<aside class="warning"><p>Note that the content you embed must be whitelisted in the &#34;IframeWhitelist&#34; var <a href="https://github.com/googlecodelabs/tools/blob/master/claat/types/node.go" target="_blank">here</a><br>Currently whitelisted include content starting with google.com, google.dev, dartlang.org, web.dev, observablehq.com, repl.it &amp; codepen.io</p>
+</aside>
+<iframe class="youtube-video" src="https://codepen.io/tzoght/embed/yRNZaP"></iframe>
 
 
       </google-codelab-step>
