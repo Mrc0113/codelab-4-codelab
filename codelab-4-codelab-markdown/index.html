@@ -70,9 +70,8 @@ $ export PATH=$PATH:$GOROOT/bin
         <p>Now that we have the environment setup let&#39;s go ahead and create a markdown file where we&#39;ll create the actual codelab.</p>
 <pre><code>$ vim codelab.md
 </code></pre>
-<p>And fill it with some example steps:</p>
-<h3 is-upgraded>Fill-in the headers</h3>
-<p>Copy and paste the headers below into your markdown file and change the values appropriately.</p>
+<h3 is-upgraded>Fill-in the header metadata</h3>
+<p>Copy and paste the headers below into your markdown file and change the values appropriately.<br>Guidelines are available below the sample headers.</p>
 <pre><code>author: Author Name
 summary: Summary of your codelab that is human readable
 id: unique-codelab-identifier
@@ -82,12 +81,28 @@ status: Published
 feedback link: A link where users can go to provide feedback (Maybe the git repo)
 analytics account: Google Analytics ID
 </code></pre>
+<p>Metadata consists of key-value pairs of the form &#34;key: value&#34;. Keys cannot<br>contain colons, and separate metadata fields must be separated by blank lines.<br>At present, values must all be on one line. All metadata must come before the<br>title. Any arbitrary keys and values may be used; however, only the following<br>will be understood by the renderer:</p>
+<ul>
+<li>Summary: A human-readable summary of the codelab. Defaults to blank.</li>
+<li>Id: An identifier composed of lowercase letters ideally describing the<br>content of the codelab. This field should be unique among<br>codelabs.</li>
+<li>Categories: A comma-separated list of the topics the codelab covers.</li>
+<li>Environments: A list of environments the codelab should be discoverable in.<br>Codelabs marked &#34;Web&#34; will be visible at the codelabs index. Codelabs marked<br>&#34;Kiosk&#34; will only be available at codelabs kiosks, which have special<br>equipment attached.</li>
+<li>Status: The publication status of the codelab. Valid values are:<br><br><ul>
+<li>Draft: Codelab is not finished.</li>
+<li>Published: Codelab is finished and visible.</li>
+<li>Deprecated: Codelab is considered stale and should not be widely advertised.</li>
+<li>Hidden: Codelab is not shown in index.</li>
+</ul>
+</li>
+<li>Feedback Link: A link to send users to if they wish to leave feedback on the<br>codelab.</li>
+<li>Analytics Account: A Google Analytics ID to include with all codelab pages.</li>
+</ul>
 <h3 is-upgraded>Add the Title</h3>
 <p>Next add your title using a single ‘#&#39; character</p>
 <pre><code># Title of codelab
 </code></pre>
 <h3 is-upgraded>Add Sections &amp; Durations</h3>
-<p>Then for each section use Header 2 or ‘##&#39; &amp; specify a duration beneath for time remaining calculations<br>In markdown I&#39;ve found that the time is formatted hh:mm:ss</p>
+<p>Then for each section use Header 2 or ‘##&#39; &amp; specify an optional duration beneath for time remaining calculations<br>Optional section times will be used to automatically total &amp; remaining tutorial times<br>In markdown I&#39;ve found that the time is formatted hh:mm:ss</p>
 <p>Example</p>
 <pre><code>## Section 1
 Duration: 0:10:00
@@ -95,7 +110,7 @@ Duration: 0:10:00
 ## Section 2
 Duration: 0:05:00
 </code></pre>
-<h3 is-upgraded>Add some example content</h3>
+<h3 is-upgraded>Add Section Content</h3>
 <p>Now that we have 2 sections to our titled codelab let&#39;s go ahead and add some content to each section.<br>Make up your own or copy &amp; paste the example below:</p>
 <p>Copy into section 1 (Below Duration and above Section 2):</p>
 <pre><code>### Info Boxes
@@ -132,8 +147,8 @@ Let&#39;s add an image!
       </google-codelab-step>
     
       <google-codelab-step label="Export &amp; Serve" duration="2">
-        <p>Now that you have an initial codelab defined in your markdown file let&#39;s go ahead and generate the static site content.<br>We can export &amp; serve the content locally using the <em>claat</em> command that we installed earlier.</p>
-<pre><code>$ claat export helloworld.md
+        <p>Now that you have an initial codelab defined in your markdown file let&#39;s go ahead and generate the static site content.<br>We can export &amp; serve the content locally using the <code>claat</code> command that we installed earlier.</p>
+<pre><code>$ claat export codelab.md
 $ claat serve
 </code></pre>
 <ul>
@@ -146,7 +161,7 @@ $ claat serve
       </google-codelab-step>
     
       <google-codelab-step label="Host Your CodeLab" duration="1">
-        <p>When you ran the <em>claat export</em> command you created the static web content needed to host your codelab.<br>It placed static web content in a directory specified by your unique &#34;id&#34; and you can view it locally by opening the index.html page.</p>
+        <p>When you ran the <code>claat export</code> command you created the static web content needed to host your codelab.<br>It placed static web content in a directory specified by your unique &#34;id&#34; and you can view it locally by opening the index.html page.</p>
 <aside class="warning"><p>Note that when you view it locally by opening index.html some of the graphics may not show up (such as access_time, Next, Back), but they work once online.</p>
 </aside>
 <p>Now that you have the static content you can host it however you want.<br>One option is pushing it to github and serving it up from Netlify.</p>
@@ -160,6 +175,7 @@ $ claat serve
   System.out.println(&#34;Hello World!&#34;);
   }
 </code></pre>
+<p>Adding an <code>inline code</code> snippet</p>
 <aside class="special"><p>This will appear in a green info box.</p>
 </aside>
 <aside class="warning"><p>This will appear in a yellow info box.</p>

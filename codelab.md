@@ -64,10 +64,10 @@ Now that we have the environment setup let's go ahead and create a markdown file
 $ vim codelab.md
 ```
 
-And fill it with some example steps:
 
-#### Fill-in the headers
+#### Fill-in the header metadata
 Copy and paste the headers below into your markdown file and change the values appropriately. 
+Guidelines are available below the sample headers. 
 
 ``` bash
 author: Author Name
@@ -80,6 +80,30 @@ feedback link: A link where users can go to provide feedback (Maybe the git repo
 analytics account: Google Analytics ID
 ```
 
+Metadata consists of key-value pairs of the form "key: value". Keys cannot
+contain colons, and separate metadata fields must be separated by blank lines.
+At present, values must all be on one line. All metadata must come before the
+title. Any arbitrary keys and values may be used; however, only the following
+will be understood by the renderer:
+
+* Summary: A human-readable summary of the codelab. Defaults to blank.
+* Id: An identifier composed of lowercase letters ideally describing the
+  content of the codelab. This field should be unique among
+  codelabs.
+* Categories: A comma-separated list of the topics the codelab covers.
+* Environments: A list of environments the codelab should be discoverable in.
+  Codelabs marked "Web" will be visible at the codelabs index. Codelabs marked
+  "Kiosk" will only be available at codelabs kiosks, which have special
+  equipment attached.
+* Status: The publication status of the codelab. Valid values are:
+  - Draft: Codelab is not finished.
+  - Published: Codelab is finished and visible.
+  - Deprecated: Codelab is considered stale and should not be widely advertised.
+  - Hidden: Codelab is not shown in index.
+* Feedback Link: A link to send users to if they wish to leave feedback on the
+  codelab.
+* Analytics Account: A Google Analytics ID to include with all codelab pages.
+
 #### Add the Title
 Next add your title using a single '#' character
 ```
@@ -87,7 +111,8 @@ Next add your title using a single '#' character
 ```
 
 #### Add Sections & Durations
-Then for each section use Header 2 or '##' & specify a duration beneath for time remaining calculations
+Then for each section use Header 2 or '##' & specify an optional duration beneath for time remaining calculations
+Optional section times will be used to automatically total & remaining tutorial times
 In markdown I've found that the time is formatted hh:mm:ss
 
 Example
@@ -99,7 +124,7 @@ Duration: 0:10:00
 Duration: 0:05:00
 ```
 
-#### Add some example content
+#### Add Section Content
 Now that we have 2 sections to our titled codelab let's go ahead and add some content to each section. 
 Make up your own or copy & paste the example below: 
 
@@ -143,10 +168,10 @@ More Markdown Parser examples can be found [here](https://github.com/googlecodel
 Duration: 0:02:00
 
 Now that you have an initial codelab defined in your markdown file let's go ahead and generate the static site content. 
-We can export & serve the content locally using the *claat* command that we installed earlier. 
+We can export & serve the content locally using the `claat` command that we installed earlier. 
 
 ``` bash
-$ claat export helloworld.md
+$ claat export codelab.md
 $ claat serve
 ```
 
@@ -157,7 +182,7 @@ $ claat serve
 ## Host Your CodeLab
 Duration: 0:01:00
 
-When you ran the *claat export* command you created the static web content needed to host your codelab. 
+When you ran the `claat export` command you created the static web content needed to host your codelab. 
 It placed static web content in a directory specified by your unique "id" and you can view it locally by opening the index.html page. 
 
 Negative
@@ -179,6 +204,8 @@ public static void main(String args[]){
   System.out.println("Hello World!");
   }
 ```
+
+Adding an `inline code` snippet
 
 Positive
 : This will appear in a green info box.
