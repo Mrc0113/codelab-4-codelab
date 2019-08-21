@@ -1,8 +1,8 @@
 author: Marc DiPasquale
 summary: Create a CodeLab Using Markdown
 id: codelab-4-codelab-markdown
-categories: codelab,markdown
-environments: Web
+categories: web
+environments: web
 status: Published
 feedback link: https://github.com/Mrc0113/codelab-4-codelab
 analytics account: UA-139902608-1
@@ -12,18 +12,18 @@ analytics account: UA-139902608-1
 ## CodeLab Overview
 Duration: 0:02:00
 
-Are you trying to create easy to use, visually appealing content for the tech community? This CodeLab will show you how to quickly create your own Google CodeLab just like the one you're using right now. 
-When creating a Codelab you have two authoring options: 
+Are you trying to create easy to use, visually appealing content for the tech community? This CodeLab will show you how to quickly create your own Google CodeLab just like the one you're using right now.
+When creating a Codelab you have two authoring options:
 1. Using a Google Doc
 1. Using a markdown file
 
-In this codelab we are going to use the second option and author our codelab using a markdown file. This gives us the flexibility of using our markdown file for other things and also storing it in our github repo with any code that might be used for a tutorial. 
+In this codelab we are going to use the second option and author our codelab using a markdown file. This gives us the flexibility of using our markdown file for other things and also storing it in our github repo with any code that might be used for a tutorial.
 
 Here is an example image of another CodeLab that I created:
 ![image_caption](img/codelabexample.png)
 
 
-**Resources:** 
+**Resources:**
 * The markdown for this codelab is located here: [codelab.md](https://github.com/Mrc0113/codelab-4-codelab/blob/master/codelab.md)
 * [Google CodeLabs Tools Github](https://github.com/googlecodelabs/tools) - The repo that contains the claat tool we'll be using today
 * [Google Group for CodeLab Authors](https://groups.google.com/forum/#!forum/codelab-authors) - great forum for asking questions about codelabs and discussing future functionality
@@ -34,7 +34,7 @@ Duration: 0:04:00
 
 In order to create a CodeLab you need *Go* and *claat* (the codelabs command line tool) installed.
 
-The instructions below are what worked for me on Mac, but you can also find instructions [here](https://github.com/googlecodelabs/tools/tree/master/claat) 
+The instructions below are what worked for me on Mac, but you can also find instructions [here](https://github.com/googlecodelabs/tools/tree/master/claat)
 
 #### Install Go & claat
 ``` bash
@@ -50,7 +50,7 @@ $ export PATH=$PATH:$GOPATH/bin
 $ export PATH=$PATH:$GOROOT/bin
 ```
 
-You should now have the *claat* command available to you. 
+You should now have the *claat* command available to you.
 ``` bash
 $ claat
 ```
@@ -58,7 +58,7 @@ $ claat
 ## Create your initial CodeLab
 Duration: 0:05:00
 
-Now that we have the environment setup let's go ahead and create a markdown file where we'll create the actual codelab. 
+Now that we have the environment setup let's go ahead and create a markdown file where we'll create the actual codelab.
 
 ``` bash
 $ vim codelab.md
@@ -66,8 +66,8 @@ $ vim codelab.md
 
 
 #### Fill-in the header metadata
-Copy and paste the headers below into your markdown file and change the values appropriately. 
-Guidelines are available below the sample headers. 
+Copy and paste the headers below into your markdown file and change the values appropriately.
+Guidelines are available below the sample headers.
 
 ``` bash
 author: Author Name
@@ -125,13 +125,13 @@ Duration: 0:05:00
 ```
 
 #### Add Section Content
-Now that we have 2 sections to our titled codelab let's go ahead and add some content to each section. 
-Make up your own or copy & paste the example below: 
+Now that we have 2 sections to our titled codelab let's go ahead and add some content to each section.
+Make up your own or copy & paste the example below:
 
 Copy into section 1 (Below Duration and above Section 2):
 ```
 ### Info Boxes
-Plain Text followed by green & yellow info boxes 
+Plain Text followed by green & yellow info boxes
 
 Negative
 : This will appear in a yellow info box.
@@ -150,7 +150,7 @@ Plain Text followed by bullets
 You created bullets!
 ```
 
-Copy into section 2 (Below Duration): 
+Copy into section 2 (Below Duration):
 ```
 ### Add a Link
 Let's add a link!
@@ -161,38 +161,38 @@ Let's add an image!
 ![image_caption](https://googlecloud.tips/img/031/codelabs.png)
 ```
 
-See the "Markdown Syntax Backup" section for more examples of what can be done. 
+See the "Markdown Syntax Backup" section for more examples of what can be done.
 More Markdown Parser examples can be found [here](https://github.com/googlecodelabs/tools/tree/master/claat/parser/md).
 
 ## Export & Serve
 Duration: 0:02:00
 
-Now that you have an initial codelab defined in your markdown file let's go ahead and generate the static site content. 
-We can export & serve the content locally using the `claat` command that we installed earlier. 
+Now that you have an initial codelab defined in your markdown file let's go ahead and generate the static site content.
+We can export & serve the content locally using the `claat` command that we installed earlier.
 
 ``` bash
 $ claat export codelab.md
 $ claat serve
 ```
 
-* Your browser should have opened (if it doesn't then try going to localhost:9090 in your browser). 
-* Choose the directory that matches your "id" that you put in the headers. 
+* Your browser should have opened (if it doesn't then try going to localhost:9090 in your browser).
+* Choose the directory that matches your "id" that you put in the headers.
 * Viola! You should have your first codelab!
 
 ## Host Your CodeLab
 Duration: 0:01:00
 
-When you ran the `claat export` command you created the static web content needed to host your codelab. 
-It placed static web content in a directory specified by your unique "id" and you can view it locally by opening the index.html page. 
+When you ran the `claat export` command you created the static web content needed to host your codelab.
+It placed static web content in a directory specified by your unique "id" and you can view it locally by opening the index.html page.
 
 Negative
-: Note that when you view it locally by opening index.html some of the graphics may not show up (such as access_time, Next, Back), but they work once online. 
+: Note that when you view it locally by opening index.html some of the graphics may not show up (such as access_time, Next, Back), but they work once online.
 
 
 Now that you have the static content you can host it however you want.
 One option is pushing it to github and serving it up from Netlify.  
 
-If you'd like to create your own landing page for codelabs, [like this one](https://codelabs.developers.google.com), there is a tool to do that as well! 
+If you'd like to create your own landing page for codelabs, [like this one](https://codelabs.developers.google.com), there is a tool to do that as well!
 Check it out here: [CodeLabs Site](https://github.com/googlecodelabs/tools/blob/master/site/README.md)
 
 
@@ -219,7 +219,7 @@ Adding an image
 ![image_caption](https://s3-eu-west-1.amazonaws.com/released-artifacts-3.x/assets/tutorial_images/creating-styles/step1.png)
 
 * List
-* using 
+* using
 * bullets
 
 ###
